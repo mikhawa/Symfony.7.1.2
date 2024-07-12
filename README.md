@@ -1,6 +1,8 @@
 # Symfony.7.1.2
 
-## Installation de Symfony
+Version installée : Symfony 7.1.2
+
+En date du 12-07-2024
 
 ## Menu
 - [Choix de Symfony](#choix-de-symfony)
@@ -15,7 +17,6 @@
 - [Création d'une entité](#création-dune-entité)
 
 
-### Date 12-07-2024
 
 # Choix de Symfony
 
