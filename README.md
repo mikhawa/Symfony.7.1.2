@@ -65,6 +65,16 @@ On peut voir toutes les commandes disponibles pour Symfony déjà installées (`
 
 Nous constatons que `Twig` est déjà installé.
 
+### Dossiers MVC
+
+De base en Symfony, nous avons les dossiers suivants :
+
+Modèles : `src/Entity`
+
+Vues : `templates`
+
+Contrôleurs : `src/Controller`
+
 ### php bin/console make:controller
 
 Les routes sont définies vers les contrôleurs depuis le fichier `config/routes.yaml`.
@@ -83,4 +93,29 @@ Pour créer un contrôleur, tapez :
 php bin/console make:controller
 ```
 
-![Symfony](https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/2024-07-12.121311.png)
+![php bin/console make:controller](https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/2024-07-12.121311.png)
+
+Pour voir ce contrôleur, tapez :
+
+```bash
+php bin/console debug:router
+```
+
+Le chemin web est donc https://127.0.0.1:8000/my/first
+
+Le chemin du contrôleur est `src/Controller/MyFirstController.php` et celui de la vue est `templates/my_first/index.html.twig`
+
+On peut changer l'URL et son nom dans le contrôleur `MyFirstController.php` :
+
+```php
+#[Route('/my/first', name: 'app_my_first')]
+
+// par exemple, on change l'URL puis le nom de la route
+
+#[Route('/', name: 'homepage')]
+```
+
+Notre contrôleur est maintenant accessible sur la page d'accueil, à l'URL https://127.0.0.1:8000/
+
+
+
