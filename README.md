@@ -42,6 +42,11 @@ Ces avantages font de Symfony un choix populaire pour le développement d'applic
 
 Il est utilisé par de nombreuses entreprises et organisations pour des projets de toutes tailles, de petites applications aux sites web à fort trafic.
 
+Voici une vue vidéo permettant de comparer Symfony et Laravel :
+
+https://grafikart.fr/tutoriels/laravel-symfony-866
+
+
 ---
 
 Retour au [Menu](#menu)
