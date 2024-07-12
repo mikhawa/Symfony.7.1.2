@@ -176,7 +176,7 @@ Pour les variables d'environnement locales, on crée un fichier `.env.local` à 
 On va y mettre notre connexion à la base de données locale en MySQL :
 
 ```bash
-DATABASE_URL="mysql://root:root@localhost:3306/symfony_last_0724?serverVersion=8.0"
+DATABASE_URL="mysql://root:@localhost:3306/symfony_last_0724?serverVersion=8.2.0"
 ```
 
 ---
@@ -185,3 +185,17 @@ Retour au [Menu](#menu)
 
 ---
 
+### Création de la base de données
+
+Pour créer la base de données, on tape :
+
+```bash
+php bin/console doctrine:database:create
+```
+![Création de la base de données](https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/2024-07-12.131822.png)
+
+---
+
+Retour au [Menu](#menu)
+
+---
