@@ -46,6 +46,14 @@ Voici une vue vidéo permettant de comparer Symfony et Laravel :
 
 https://grafikart.fr/tutoriels/laravel-symfony-866
 
+Symfony vs Laravel est un débat digne d’intérêt entre ces deux frameworks riches en fonctionnalités.
+
+Mais lequel choisir ? Tout dépend des problèmes que vous essayez de résoudre et de la technologie la plus adaptée.
+
+Symfony convient mieux aux applications web complexes ou aux projets de développement à long terme qui nécessitent de nouvelles techniques de développement. 
+
+Cependant, nous suggérons Laravel si vous souhaitez créer une application web simple avec peu de frais et dans un délai plus court.
+
 
 ---
 
