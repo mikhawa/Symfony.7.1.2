@@ -102,6 +102,12 @@ Depuis le dossier du projet, lancez le serveur Symfony :
 symfony server:start
 ```
 
+Ou en mode démon (Daemon) pour lancer le serveur en arrière-plan :
+
+```bash
+symfony server:start -d
+```
+
 ---
 
 Retour au [Menu](#menu)
