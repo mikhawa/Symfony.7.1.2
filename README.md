@@ -468,6 +468,8 @@ php bin/console doctrine:migrations:migrate
 
 2 autres tables sont créées automatiquement par Symfony : `doctrine_migration_versions` et `messenger_messages`.
 
+Nous pouvons voir les tables créées dans la base de données `symfony_last_0724`.
+
 ---
 
 Retour au [Menu](#menu)
