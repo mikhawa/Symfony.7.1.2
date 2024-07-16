@@ -31,7 +31,8 @@ class Article
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $PublishedDate = null;
 
-    #[ORM\Column(type: Types::SMALLINT, columnDefinition: 'TINYINT(1) DEFAULT 0')]
+    #[ORM\Column(type: Types::SMALLINT,
+        options: ['unsigned' => true, 'default' => 0])]
     private ?int $IsPublished = null;
 
     public function getId(): ?int

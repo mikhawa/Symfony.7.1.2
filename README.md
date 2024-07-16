@@ -15,6 +15,9 @@ En date du 12-07-2024
 - [.env en local](#env-en-local)
 - [Création de la base de données](#création-de-la-base-de-données)
 - [Création d'une entité](#création-dune-entité)
+- [Modification de l'entité avant la migration](#modification-de-lentité-avant-la-migration)
+- [Création et exécution de la migration](#création-et-exécution-de-la-migration)
+
 
 
 
@@ -426,14 +429,15 @@ class Article
 
 ###
     // que le champs `CreateDate` ne doit avoir une valeur que lors de la création
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ['default' => 'CURRENT_TIMESTAMP'])]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, 
+    options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeInterface $CreateDate = null;
 
 ###
 
-    // que la valeur par défaut de `IsPublished` est 0
-    #[ORM\Column(type: Types::SMALLINT, 
-    columnDefinition: 'TINYINT(1) DEFAULT 0')]
+    // que la valeur par défaut de `IsPublished` est 0 et non signée
+    #[ORM\Column(type: Types::SMALLINT,
+        options: ['unsigned' => true, 'default' => 0])]
     private ?int $IsPublished = null;
 
 ```
@@ -444,10 +448,28 @@ Retour au [Menu](#menu)
 
 ---
 
-### Création de la migration
+### Création et exécution de la migration
 
 Pour créer la migration, on tape :
 
 ```bash
 php bin/console make:migration
 ```
+
+Un fichier de migration est créé dans le dossier `migrations` à la racine du projet.
+
+Pour exécuter la migration, on tape :
+
+```bash
+php bin/console doctrine:migrations:migrate
+```
+
+**Attention, cette commande va créer la table `article` dans la base de données et effacer le contenu de la table si elle existe déjà.**
+
+2 autres tables sont créées automatiquement par Symfony : `doctrine_migration_versions` et `messenger_messages`.
+
+---
+
+Retour au [Menu](#menu)
+
+---
