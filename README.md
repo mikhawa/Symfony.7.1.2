@@ -400,3 +400,54 @@ Nous avons donc créé une entité `Article` avec les champs `Title`, `Text`, `C
 Retour au [Menu](#menu)
 
 ---
+
+### Modification de l'entité avant la migration
+
+Avant de faire la migration, on peut modifier l'entité `Article` dans le fichier `src/Entity/Article.php`.
+
+Nous allons effectuer les modifications suivantes :
+
+```php
+### src/Entity/Article.php
+
+### 
+
+#[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[Broadcast]
+class Article
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    // nous allons indiquer que l'id est unsigned
+    // en ajoutant `unsigned=true` à Column
+    // #[ORM\Column]
+    #[ORM\Column (options: ['unsigned' => true])]
+    private ?int $id = null;
+
+###
+    // que le champs `CreateDate` ne doit avoir une valeur que lors de la création
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ['default' => 'CURRENT_TIMESTAMP'])]
+    private ?\DateTimeInterface $CreateDate = null;
+
+###
+
+    // que la valeur par défaut de `IsPublished` est 0
+    #[ORM\Column(type: Types::SMALLINT, 
+    columnDefinition: 'TINYINT(1) DEFAULT 0')]
+    private ?int $IsPublished = null;
+
+```
+
+---
+
+Retour au [Menu](#menu)
+
+---
+
+### Création de la migration
+
+Pour créer la migration, on tape :
+
+```bash
+php bin/console make:migration
+```
