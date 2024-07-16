@@ -260,3 +260,143 @@ Pour créer une entité, on tape :
 ```bash
 php bin/console make:entity
 ```
+
+Note : Pour utiliser `Symfony UX Turbo` qui est proposé, on doit installer au préalable `Mercure`.
+
+On clique alors sur `ctrl + c` pour quitter la génération de l'entité.
+
+Si installé, `Symfony UX Turbo` permettra de charger les pages plus rapidement, en ne chargeant que les éléments qui changent grâce à du JavaScript.
+
+Nous le ferons plus tard. Voici la documentation de `Symfony UX Turbo` :
+
+https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
+
+Pour installer `Mercure`, et donc pouvoir accepter le `Add the ability to broadcast entity updates using Symfony UX Turbo? (yes/no)` on tape :
+
+```bash
+composer require symfony/mercure-bundle"
+```
+
+Ensuite, on tape à nouveau :
+
+```bash
+php bin/console make:entity
+```
+Et on choisit dans le bash :
+
+```bash
+micha@HP-Victus MINGW64 ~/MesDocuments/SITES/2024/SymfonyLast0724 (main)
+$ php bin/console make:entity
+
+ Class name of the entity to create or update (e.g. VictoriousKangaroo):
+ > Article
+Article
+
+ Add the ability to broadcast entity updates using Symfony UX Turbo? (yes/no) [no]:
+ > yes
+
+ created: src/Entity/Article.php
+ created: src/Repository/ArticleRepository.php
+ created: templates/broadcast/Article.stream.html.twig
+
+ Entity generated! Now let\'s add some fields!
+ You can always add more fields later manually or by re-running this command.
+
+ New property name (press <return> to stop adding fields):
+ > Title
+
+ Field type (enter ? to see all types) [string]:
+ >
+
+
+ Field length [255]:
+ > 180
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > Text
+
+ Field type (enter ? to see all types) [string]:
+ > text
+text
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > CreateDate
+
+ Field type (enter ? to see all types) [string]:
+ > datetime
+datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > UpdateDate
+
+ Field type (enter ? to see all types) [string]:
+ > datetime
+datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > PublishedDate
+
+ Field type (enter ? to see all types) [string]:
+ > datetime
+datetime
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ > yes
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ > IsPublished
+
+ Field type (enter ? to see all types) [boolean]:
+ > smallint
+smallint
+
+ Can this field be null in the database (nullable) (yes/no) [no]:
+ >
+
+ updated: src/Entity/Article.php
+
+ Add another property? Enter the property name (or press <return> to stop adding fields):
+ >
+
+
+
+  Success!
+
+
+ Next: When you\'re ready, create a migration with php bin/console make:migration
+```
+
+Nous avons donc créé une entité `Article` avec les champs `Title`, `Text`, `CreateDate`, `UpdateDate`, `PublishedDate` et `IsPublished`.
+
+**3 fichiers ont été créés :**
+- `src/Entity/Article.php` qui est le mapping de la table `article` en base de données
+- `src/Repository/ArticleRepository.php` qui est le repository de l'entité `Article` (pour les requêtes SQL supplémentaires)
+- `templates/broadcast/Article.stream.html.twig` qui est le template pour le broadcast des entités
+
+---
+
+Retour au [Menu](#menu)
+
+---
