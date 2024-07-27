@@ -92,6 +92,16 @@ Création d'un nouveau projet Symfony (le dernier paramètre est le nom du proje
 symfony new --webapp SymfonyLast0724
 ```
 
+L'argument `--webapp` permet de créer un projet Symfony avec une structure de base pour une application web.
+
+**N'oubliez pas de rentrer dans le dossier du projet avant de lancer les commandes Symfony**
+
+Dans notre cas, le dossier du projet est `SymfonyLast0724` :
+
+```bash
+cd SymfonyLast0724
+```
+
 ---
 
 Retour au [Menu](#menu)
