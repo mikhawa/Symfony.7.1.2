@@ -17,6 +17,7 @@ En date du 12-07-2024
 - [Création d'une entité](#création-dune-entité)
 - [Modification de l'entité avant la migration](#modification-de-lentité-avant-la-migration)
 - [Création et exécution de la migration](#création-et-exécution-de-la-migration)
+- [Vérification des mises à jour (2024-07-24)](#vérification-des-mises-à-jour-2024-07-24)
 
 
 
@@ -475,3 +476,24 @@ Nous pouvons voir les tables créées dans la base de données `symfony_last_072
 Retour au [Menu](#menu)
 
 ---
+
+### Vérification des mises à jour (2024-07-24)
+
+Pour vérifier les mises à jour de Symfony, on tape :
+
+```bash
+composer update
+```
+
+En date du 2024-07-24, la version de Symfony passe de la `7.1.2` à `7.1.3`.
+
+Il vaut mieux faire ces mises à jour régulièrement pour éviter les failles de sécurité.
+
+Mais également vérifier que le site reste fonctionnel après chaque mise à jour!
+
+---
+
+Retour au [Menu](#menu)
+
+---
+
