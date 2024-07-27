@@ -112,6 +112,24 @@ Ou en mode démon (Daemon) pour lancer le serveur en arrière-plan :
 symfony server:start -d
 ```
 
+Si le serveur est démarré en http://, quittez avec ctrl-c, et installez le certificat SSL
+
+```bash
+symfony server:ca:install
+```
+
+Une manière plus "propre" de lancer le serveur en mode daemon (invisible) est la suivante :
+
+```bash
+symfony serve -d
+```
+
+Et pour le fermer proprement :
+
+```bash
+symfony server:stop
+```
+
 ---
 
 Retour au [Menu](#menu)
