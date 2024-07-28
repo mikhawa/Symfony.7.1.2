@@ -517,7 +517,15 @@ En date du 2024-07-24, la version de Symfony passe de la `7.1.2` à `7.1.3`.
 
 Il vaut mieux faire ces mises à jour régulièrement pour éviter les failles de sécurité.
 
-Mais également vérifier que le site reste fonctionnel après chaque mise à jour!
+Mais également vérifier que le site reste fonctionnel après chaque mise à jour !
+
+On peut voir dans la bare de débogage que la version de Symfony est bien passée à `7.1.3`. Si on va voir les logs messages, on peut voir qu'une bibliothèque supplémentaire est conseillée :
+
+```bash
+composer require amphp/http-client:^4.2.1
+```
+
+Elle améliore les performances de Symfony en jouant sur l'asynchrone de PHP.
 
 ---
 
