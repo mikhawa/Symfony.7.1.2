@@ -519,7 +519,9 @@ Il vaut mieux faire ces mises à jour régulièrement pour éviter les failles d
 
 Mais également vérifier que le site reste fonctionnel après chaque mise à jour !
 
-On peut voir dans la bare de débogage que la version de Symfony est bien passée à `7.1.3`. Si on va voir les logs messages, on peut voir qu'une bibliothèque supplémentaire est conseillée :
+On peut voir dans la bare de débogage que la version de Symfony est bien passée à `7.1.3`. 
+
+Si on va voir les logs messages (depuis la barre de débogage par exemple), on peut voir qu'une bibliothèque supplémentaire est conseillée :
 
 ```bash
 composer require amphp/http-client:^4.2.1
