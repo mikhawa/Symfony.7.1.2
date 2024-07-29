@@ -543,6 +543,11 @@ Pour créer un CRUD (Create, Read, Update, Delete) sur notre entité `Article`, 
 php bin/console make:crud
 ```
 
+!(Création d'un CRUD)[https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/ArticleCrud.PNG]
+
+L'URL sera :
+
+https://127.0.0.1:8000/article/crud/
 
 Pour la suite :
 
