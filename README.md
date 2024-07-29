@@ -535,6 +535,15 @@ Retour au [Menu](#menu)
 
 ---
 
+### Création d'un CRUD sur notre entité `Article`
+
+Pour créer un CRUD (Create, Read, Update, Delete) sur notre entité `Article`, on tape :
+
+```bash
+php bin/console make:crud
+```
+
+
 Pour la suite :
 
 https://symfony.com/doc/current/frontend/create_ux_bundle.html

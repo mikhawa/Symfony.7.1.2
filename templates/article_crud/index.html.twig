@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+    <h1>Article index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>CreateDate</th>
+                <th>UpdateDate</th>
+                <th>PublishedDate</th>
+                <th>IsPublished</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.Title }}</td>
+                <td>{{ article.Text }}</td>
+                <td>{{ article.CreateDate ? article.CreateDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.UpdateDate ? article.UpdateDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.PublishedDate ? article.PublishedDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.IsPublished }}</td>
+                <td>
+                    <a href="{{ path('app_article_crud_show', {'id': article.id}) }}">show</a>
+                    <a href="{{ path('app_article_crud_edit', {'id': article.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_article_crud_new') }}">Create new</a>
+{% endblock %}
