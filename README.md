@@ -309,6 +309,11 @@ Pour installer `Mercure`, et donc pouvoir accepter le `Add the ability to broadc
 composer require symfony/mercure-bundle"
 ```
 
+**! Dans ce cas, il faut le configurer**
+
+
+ICI
+
 Ensuite, on tape à nouveau :
 
 ```bash
