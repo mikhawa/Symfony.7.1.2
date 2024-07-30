@@ -18,6 +18,7 @@ En date du 12-07-2024
 - [Modification de l'entité avant la migration](#modification-de-lentité-avant-la-migration)
 - [Création et exécution de la migration](#création-et-exécution-de-la-migration)
 - [Vérification des mises à jour (2024-07-24)](#vérification-des-mises-à-jour-2024-07-24)
+- [Création d'un CRUD sur notre entité `Article`](#création-dun-crud-sur-notre-entité-article)
 
 
 
@@ -306,13 +307,9 @@ https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
 Pour installer `Mercure`, et donc pouvoir accepter le `Add the ability to broadcast entity updates using Symfony UX Turbo? (yes/no)` on tape :
 
 ```bash
-composer require symfony/mercure-bundle"
+composer require symfony/mercure-bundle
 ```
 
-**! Dans ce cas, il faut le configurer**
-
-
-ICI
 
 Ensuite, on tape à nouveau :
 
@@ -447,10 +444,17 @@ Nous allons effectuer les modifications suivantes :
 ```php
 ### src/Entity/Article.php
 
-### 
+namespace App\Entity;
+
+use App\Repository\ArticleRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM
+// on commente la ligne suivante pour ne pas importer Symfony UX Turbo pour le moment
+// use Symfony\UX\Turbo\Attribute\Broadcast;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-#[Broadcast]
+// on commente la ligne suivante pour ne pas utiliser Symfony UX Turbo pour le moment
+// #[Broadcast]
 class Article
 {
     #[ORM\Id]
@@ -554,7 +558,11 @@ L'URL sera :
 
 https://127.0.0.1:8000/article/crud/
 
-Pour la suite :
+---
 
-https://symfony.com/doc/current/frontend/create_ux_bundle.html
+Retour au [Menu](#menu)
+
+---
+
+
 

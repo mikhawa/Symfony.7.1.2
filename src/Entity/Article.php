@@ -5,10 +5,10 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\UX\Turbo\Attribute\Broadcast;
+// use Symfony\UX\Turbo\Attribute\Broadcast;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-#[Broadcast]
+//#[Broadcast]
 class Article
 {
     #[ORM\Id]
