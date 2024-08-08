@@ -296,26 +296,12 @@ php bin/console make:entity
 
 Note : Pour utiliser `Symfony UX Turbo` qui est proposé, on doit installer au préalable `Mercure`.
 
-On clique alors sur `ctrl + c` pour quitter la génération de l'entité.
-
-Si installé, `Symfony UX Turbo` permettra de charger les pages plus rapidement, en ne chargeant que les éléments qui changent grâce à du JavaScript.
 
 Nous le ferons plus tard. Voici la documentation de `Symfony UX Turbo` :
 
 https://github.com/symfony/ux-turbo#broadcast-doctrine-entities-update
 
-Pour installer `Mercure`, et donc pouvoir accepter le `Add the ability to broadcast entity updates using Symfony UX Turbo? (yes/no)` on tape :
 
-```bash
-composer require symfony/mercure-bundle
-```
-
-
-Ensuite, on tape à nouveau :
-
-```bash
-php bin/console make:entity
-```
 Et on choisit dans le bash :
 
 ```bash
@@ -327,11 +313,10 @@ $ php bin/console make:entity
 Article
 
  Add the ability to broadcast entity updates using Symfony UX Turbo? (yes/no) [no]:
- > yes
+ > no
 
  created: src/Entity/Article.php
  created: src/Repository/ArticleRepository.php
- created: templates/broadcast/Article.stream.html.twig
 
  Entity generated! Now let\'s add some fields!
  You can always add more fields later manually or by re-running this command.
