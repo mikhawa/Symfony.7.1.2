@@ -25,7 +25,7 @@ class Article
     #[ORM\Column(type: Types::DATETIME_MUTABLE, options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeInterface $CreateDate = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    #[ORM\Column(nullable: true, columnDefinition: 'DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP')]
     private ?\DateTimeInterface $UpdateDate = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]

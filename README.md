@@ -262,7 +262,7 @@ Pour les variables d'environnement locales, on crée un fichier `.env.local` à 
 On va y mettre notre connexion à la base de données locale en MySQL (`root` sans mot de passe dans cet exemple) :
 
 ```bash
-DATABASE_URL="mysql://root:@localhost:3306/symfony_last_0724?serverVersion=8.2.0"
+DATABASE_URL="mysql://root:@localhost:3306/sym71?serverVersion=8.3.0"
 ```
 
 ---
@@ -451,12 +451,16 @@ class Article
     private ?int $id = null;
 
 ###
-    // que le champs `CreateDate` ne doit avoir une valeur que lors de la création
+    // que le champ `CreateDate` ne doit avoir une valeur que lors de la création
     #[ORM\Column(type: Types::DATETIME_MUTABLE, 
     options: ['default' => 'CURRENT_TIMESTAMP'])]
     private ?\DateTimeInterface $CreateDate = null;
 
 ###
+
+    #[ORM\Column(nullable: true, 
+    columnDefinition: 'DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP')]
+    private ?\DateTimeInterface $UpdateDate = null;
 
     // que la valeur par défaut de `IsPublished` est 0 et non signée
     #[ORM\Column(type: Types::SMALLINT,
