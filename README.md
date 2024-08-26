@@ -553,5 +553,36 @@ Retour au [Menu](#menu)
 
 ---
 
+### Création d'un utilisateur
 
+Pour créer un utilisateur, on tape :
+
+```bash
+php bin/console make:user
+```
+
+On peut choisir le nom de l'entité utilisateur, par exemple `User`, on accepte la gestion des mots de passe, et la mise à jour de la base de données.
+
+On peut voir que 2 fichiers ont été créés et 2 fichiers ont été mis à jour :
+
+```bash
+created: src/Entity/User.php
+created: src/Repository/UserRepository.php
+updated: src/Entity/User.php
+updated: config/packages/security.yaml
+``` 
+
+À modifier dans le fichier `src/Entity/User.php` :
+
+```php
+### src/Entity/User.php
+###
+#[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(options: ['unsigned' => true])]
+    private ?int $id = null;
+
+#[ORM\Column(length: 180, unique: true)]
+    private ?string $username = null;
+```
 
