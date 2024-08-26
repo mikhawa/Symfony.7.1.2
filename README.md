@@ -495,7 +495,7 @@ php bin/console doctrine:migrations:migrate
 
 2 autres tables sont créées automatiquement par Symfony : `doctrine_migration_versions` et `messenger_messages`.
 
-Nous pouvons voir les tables créées dans la base de données `symfony_last_0724`.
+Nous pouvons voir les tables créées dans la base de données `sym72`.
 
 ---
 
@@ -541,7 +541,7 @@ Pour créer un CRUD (Create, Read, Update, Delete) sur notre entité `Article`, 
 php bin/console make:crud
 ```
 
-!(Création d'un CRUD)[https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/ArticleCrud.PNG]
+![Création d'un CRUD](https://raw.githubusercontent.com/mikhawa/Symfony.7.1.2/main/MyDatas/ArticleCrud.PNG)
 
 L'URL sera :
 
